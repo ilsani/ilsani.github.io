@@ -1,0 +1,88 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Martino Sani's blog" />
+    <meta name="keywords" content="code,development,security" />
+    <meta name="author" content="Martino Sani" />
+
+    <meta content="{{ site.title }}" property="og:site_name" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@martinosani" />
+      
+    {% if page.title %}
+    <meta content="{{ page.title }}" property="og:title" />
+    <meta content="{{ page.title }}" name="twitter:title" />
+    {% else %}
+    <meta content="{{ site.title }}" property="og:title" />
+    {% endif %}
+
+    {% if page.title %}
+    <meta content="article" property="og:type" />
+    {% else %}
+    <meta content="website" property="og:type" />
+    {% endif %}
+      
+    {% if page.description %}
+    <meta content="{{ page.description }}" property="og:description" />
+    <meta content="{{ page.description }}" name="twitter:description" />
+    {% else %}
+    <meta content="{{ site.description }}" property="og:description" />
+    <meta content="{{ site.description }}" name="twitter:description" />
+    {% endif %}
+      
+    {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url" />
+    {% endif %}
+
+    {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time" />
+    <meta content="{{ site.url }}/me" property="article:author" />
+    {% endif %}
+      
+    {% if page.image %}
+    <meta content="/asses/images/{{ page.image }}" property="og:image" />
+    {% else %}
+    <meta content="{{ site.url }}/assets/images/logo.png" property="og:image" />
+    <meta content="{{ site.url }}/assets/images/logo.png" name="twitter:image" />
+    {% endif %}
+    
+    <link rel="stylesheet" href="/assets/css/style.css?v=4961f0e92e685a76c03b087efc1f1f8c37395401" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <title>Martino Sani</title>
+      
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container header">
+	<h1>Martino Sani</h1>
+	<div class="downloads">
+	  <a href="/">Blog</a> :|:
+	  <a href="/me.html">Me</a>
+	</div>
+      </div>
+    </header>
+
+    <div class="container content">
+      <section id="main_content">
+	{{ content }}
+      </section>
+    </div>
+
+    <div class="container footer">
+      <a target="_blank" href="https://it.linkedin.com/in/martino-sani">Linkedin</a>
+      <a target="_blank" href="http://twitter.com/martinosani">Twitter</a>
+      <p>&copy; 2017 <a href="/">Martino Sani</a>
+    </div>
+
+</div>
+
+</body>
+</html>
+

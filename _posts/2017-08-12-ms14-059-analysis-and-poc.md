@@ -107,7 +107,7 @@ All the code fixes in System.Web.Mvc.dll seem to be related to a Cross-Site Scri
 Because the vulnerable code is triggered only when *TemplateDepth* is greater than 1, in my POC I used a list of *Object*.
 
 Vulnerable ASP.NET MVC Controller:
-```
+```c
 namespace WebSite.Vulnerable.Controllers
 {
     public class HomeController : Controller

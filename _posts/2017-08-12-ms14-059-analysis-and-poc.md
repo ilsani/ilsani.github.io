@@ -169,7 +169,7 @@ Vulnerable ASP.NET MVC View:
 </html>
 ```
 
-You can download the full project [here][1]
+You can download the full project [here][1].
 
 ## References
 * [DNN Security Center](http://www.dnnsoftware.com/community/security/security-center)

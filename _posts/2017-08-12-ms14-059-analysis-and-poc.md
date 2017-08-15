@@ -100,9 +100,71 @@ internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateH
 
 All the code fixes in System.Web.Mvc.dll seem to be related to a Cross-Site Scripting (XSS) vulnerability, but in which scenarios it may be exploited?
 
-*DefaultDisplayTemplates.ObjectTemplate()* is the default handler that ASP.NET MVC uses when a web site renders an *Object* with the HTML helpers, such as *@Html.DisplayFor()*.
+*DefaultDisplayTemplates.ObjectTemplate()* is the default handler that ASP.NET MVC uses when a web site renders an *Object* with the HTML helpers, such as *@Html.DisplayFor()*. Below image shows the default display handlers defined in the *System.Web.Mvc.Html.TemplateHelpers* class (https://github.com/ASP-NET-MVC/aspnetwebstack/blob/master/src/System.Web.Mvc/Html/TemplateHelpers.cs#L26):
+
+![default display handlers]({{ site.url }}/assets/images/posts/ms14-059-analysis-and-poc/default-display-actions.png)
 
 Because the vulnerable code is triggered only when *TemplateDepth* is greater than 1, in my POC I used a list of *Object*.
+
+Vulnerable ASP.NET MVC Controller:
+```
+namespace WebSite.Vulnerable.Controllers
+{
+    public class HomeController : Controller
+    {
+
+	// turn off the ASP.NET Request Validation
+        [ValidateInput(false)]
+
+        // firstCirty is the attacker-controlled param
+	public ActionResult Index(string firstCity)
+	{
+     	    String username = "bob";
+
+            var addresses = new List<Models.Address>();
+
+	    // I use the attacker-controlled param without any type of security control
+	    addresses.Add(new Models.Address(firstCity, "Italy"));
+	    
+	    addresses.Add(new Models.Address("Berlin", "Germany"));
+
+            var model = new Models.User(username, addresses);
+
+	    // I return the malicous model to the View
+            return View(model);
+	}
+    }
+}
+
+```
+
+Vulnerable ASP.NET MVC View:
+```
+@model WebSite.Vulnerable.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS14-059</title>
+</head>
+<body>
+
+    <div class="container body-content">
+
+        <h1>MS14-059</h1>
+
+	<!-- I render a model property with the default ASP.NET MVC template -->
+        <div class="user-info-box">
+	    @Html.DisplayFor(x => x.Addresses)
+	</div>
+
+    </div>
+
+</body>
+</html>
+```
 
 
 

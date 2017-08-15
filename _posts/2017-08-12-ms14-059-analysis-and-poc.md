@@ -96,9 +96,14 @@ internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateH
 }
 ```
 
-After analysis all the changes reported by WinMerge looks like that MS14-059 fixes some Cross-Site Scripting (XSS) issues in the System.Web.Mvc.dll.
-
 ### Step #4 - Exploit
+
+All the code fixes in System.Web.Mvc.dll seem to be related to a Cross-Site Scripting (XSS) vulnerability, but in which scenarios it may be exploited?
+
+*DefaultDisplayTemplates.ObjectTemplate()* is the default handler that ASP.NET MVC uses when a web site renders an *Object* with the HTML helpers, such as *@Html.DisplayFor()*.
+
+Because the vulnerable code is triggered only when *TemplateDepth* is greater than 1, in my POC I used a list of *Object*.
+
 
 
 

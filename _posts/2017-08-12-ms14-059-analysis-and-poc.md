@@ -123,14 +123,14 @@ namespace WebSite.Vulnerable.Controllers
 
             var addresses = new List<Models.Address>();
 
-	    // I use the attacker-controlled param without any type of security control
+	    // attacker-controlled param without any type of security control
 	    addresses.Add(new Models.Address(firstCity, "Italy"));
 	    
 	    addresses.Add(new Models.Address("Berlin", "Germany"));
 
             var model = new Models.User(username, addresses);
 
-	    // I return the malicous model to the View
+	    // malicous model returned to the View
             return View(model);
 	}
     }
@@ -155,7 +155,8 @@ Vulnerable ASP.NET MVC View:
 
         <h1>MS14-059</h1>
 
-	<!-- I render a model property with the default ASP.NET MVC template -->
+	<!-- I render a model property with the default ASP.NET MVC template
+	     that calls the vulnerable DefaultDisplayTemplates.ObjectTemplate()  -->
         <div class="user-info-box">
 	    @Html.DisplayFor(x => x.Addresses)
 	</div>

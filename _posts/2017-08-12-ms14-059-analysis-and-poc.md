@@ -73,7 +73,7 @@ WinMerge found 41 modified files. A lot of these findings were false positives d
 * ModelMetadata.cs
 
 The patched version of these files have code related to the HTML encoding. For example, *DefaultDisplayTemplates.cs* has a new *HtmlTemplate.Encode()* call in the *ObjectTemplate()* method.
-```
+```c
 internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateHelperDelegate templateHelper)
 {
 	...
@@ -100,7 +100,9 @@ internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateH
 
 All the code fixes in System.Web.Mvc.dll seem to be related to a Cross-Site Scripting (XSS) vulnerability, but in which scenarios it may be exploited?
 
-*DefaultDisplayTemplates.ObjectTemplate()* is the default handler that ASP.NET MVC uses when a web site renders an *Object* with the HTML helpers, such as *@Html.DisplayFor()*. Below image shows the default display handlers defined in the *System.Web.Mvc.Html.TemplateHelpers* class (https://github.com/ASP-NET-MVC/aspnetwebstack/blob/master/src/System.Web.Mvc/Html/TemplateHelpers.cs#L26):
+*DefaultDisplayTemplates.ObjectTemplate()* is the default handler that ASP.NET MVC uses when a web site renders an *Object* with the HTML helpers, such as *@Html.DisplayFor()*.
+
+Below image shows the default display handlers defined in the *System.Web.Mvc.Html.TemplateHelpers* class (https://github.com/ASP-NET-MVC/aspnetwebstack/blob/master/src/System.Web.Mvc/Html/TemplateHelpers.cs#L26):
 
 ![default display handlers]({{ site.url }}/assets/images/posts/ms14-059-analysis-and-poc/default-display-actions.png)
 
@@ -167,11 +169,13 @@ Vulnerable ASP.NET MVC View:
 </html>
 ```
 
-
-
+You can download the full project [here][1]
 
 ## References
 * [DNN Security Center](http://www.dnnsoftware.com/community/security/security-center)
 * [Microsoft Security Fix - KB2990942](https://www.microsoft.com/en-us/download/details.aspx?id=44533)
 * [Microsoft Security Bulletin MS14-059](https://technet.microsoft.com/en-us/library/security/ms14-059.aspx)
 * [HtmlHelper.Encode()](https://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper.attributeencode(v=vs.118).aspx#M:System.Web.Mvc.HtmlHelper.AttributeEncode(System.String))
+
+
+[1]:{{ site.url }}/assets/data/ms14-059-analysis-and-poc/ms14-059-sample-project.zip

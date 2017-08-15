@@ -58,21 +58,21 @@ The simplest way to find the differences between patched and unpatched System.We
 2. I exported the source code files to the file system (Right-click on the DLL -> Export to Project)
 3. With the help of WinMerge I compared these 2 projects in order to find the differences
 
-**If you try to reproduce the step (3) remember to add the following Linefilters in WinMerge, otherwise you will get a lot of junk as result:**
+*If you try to reproduce the step (3) remember to add the following Linefilters in WinMerge, otherwise you will get a lot of junk as result:*
 ```
 ^// MVID:
 ^// Assembly:
 ```
 
 WinMerge found 41 modified files. A lot of these findings were false positives due to the compiler optimization or decompiler issues. Others were changes not related to a security fix. But 6 of these files were interesting:
->> DefaultDisplayTemplates.cs
->> DefaultEditorTemplates.cs
->> CachedDataAnnotationsModelMetadata.cs
->> CachedModelMetadata1.cs
->> DataAnnotationsModelMetadataProvider.cs
->> ModelMetadata.cs
+* DefaultDisplayTemplates.cs
+* DefaultEditorTemplates.cs
+* CachedDataAnnotationsModelMetadata.cs
+* CachedModelMetadata1.cs
+* DataAnnotationsModelMetadataProvider.cs
+* ModelMetadata.cs
 
-All of these files had new code related to the HTML encoding. For example, **DefaultDisplayTemplates.cs** has a new **HtmlTemplate.Encode()** call in the **ObjectTemplate**.
+The patched version of these files have code related to the HTML encoding. For example, *DefaultDisplayTemplates.cs* has a new *HtmlTemplate.Encode()* call in the *ObjectTemplate()* method.
 ```
 internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateHelperDelegate templateHelper)
 {
@@ -85,7 +85,7 @@ internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateH
 	{
 		string str = modelMetadata.SimpleDisplayText;
 
-		// new code
+		// new code encodes HTML string
 		if (modelMetadata.HtmlEncode)
 		   str = html.Encode(str);
 		return str;
@@ -96,11 +96,14 @@ internal static string ObjectTemplate(HtmlHelper html, TemplateHelpers.TemplateH
 }
 ```
 
-
+After analysis all the changes reported by WinMerge looks like that MS14-059 fixes some Cross-Site Scripting (XSS) issues in the System.Web.Mvc.dll.
 
 ### Step #4 - Exploit
+
+
 
 ## References
 * [DNN Security Center](http://www.dnnsoftware.com/community/security/security-center)
 * [Microsoft Security Fix - KB2990942](https://www.microsoft.com/en-us/download/details.aspx?id=44533)
 * [Microsoft Security Bulletin MS14-059](https://technet.microsoft.com/en-us/library/security/ms14-059.aspx)
+* [HtmlHelper.Encode()](https://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper.attributeencode(v=vs.118).aspx#M:System.Web.Mvc.HtmlHelper.AttributeEncode(System.String))

@@ -169,6 +169,11 @@ Vulnerable ASP.NET MVC View:
 </html>
 ```
 
+A malicous user could trigger a XSS vulnerability in the above code with the following HTTP GET request:
+```
+http://<website>/Home/Index?firstCity=<script>alert(1)</script>
+```
+
 You can download the full project [here][1].
 
 ## References

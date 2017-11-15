@@ -34,3 +34,8 @@ body {
 .header {
     text-align: center;
 }
+
+.subtitle {
+    color: #9ba1a6;
+    border-bottom: 1px solid #f2f3f3;
+}

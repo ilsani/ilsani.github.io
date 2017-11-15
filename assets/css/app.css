@@ -40,6 +40,9 @@ body {
     border-bottom: 1px solid #f2f3f3;
 }
 
+div.blog-posts {
+    padding-top: 15px;
+
 div.blog-posts h3 {
     margin-bottom: 2px;
 }

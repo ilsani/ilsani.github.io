@@ -10,7 +10,7 @@ body {
 
 header {
     background: none;
-    border-bottom: none;
+    border-bottom: 1px dashed #ccc;
 }
 
 header h1 {
@@ -38,4 +38,8 @@ ul {
 
 ul li {
     list-style-image: unset;
+}
+
+ol {
+    padding-left: 28px;
 }

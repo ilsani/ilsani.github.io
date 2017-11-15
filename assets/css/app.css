@@ -41,7 +41,8 @@ body {
 }
 
 div.blog-posts {
-    padding-top: 15px;
+    padding-top: 10px;
+}
 
 div.blog-posts h3 {
     margin-bottom: 2px;

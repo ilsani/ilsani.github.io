@@ -3,6 +3,7 @@ layout: default
 title:  "CVE-2017-8114 - Roundcube Webmail Virtualmin Privilege Escalation"
 date:   2017-08-12 19:25:00
 categories: roundcube
+preview: "An authenticated attacker can execute malicious inputs."
 ---
 
 {{ page.title }}

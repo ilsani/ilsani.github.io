@@ -13,6 +13,16 @@ header {
     border-bottom: none;
 }
 
-h1 h2 h3 h4 {
+header h1 {
     color: unset;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: unset;
+}
+
+a {
+    color: #111;
+    text-shadow: unset;
+    text-decoration: none;
 }

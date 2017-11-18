@@ -41,7 +41,7 @@ body {
 }
 
 div.blog-posts {
-    padding-top: 10px;
+    padding: 10px 0 10px 0;
 }
 
 div.blog-posts h3 {

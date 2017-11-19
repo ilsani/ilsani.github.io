@@ -13,12 +13,11 @@ CVE: CVE-2017-5358
 
 The vulnerable code is into `php_Easycom5_3_0.dll`.
 
-Tested on Windows XP SP2.
-
-## Requirements
+## Environment
 * EasycomPHP_4.0029.iC8im2.exe
 * PHP 5.3.1 (cli) (built: Nov 20 2009 17:26:32)
 * xampp-win32-1.7.3
+* Windows XP SP2 32bit
 
 ## Exploit
 ```php

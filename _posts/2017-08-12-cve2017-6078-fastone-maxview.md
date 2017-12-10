@@ -1,8 +1,6 @@
 ---
-layout: default
 title:  "CVE-2017-6078 - Crash in FastStone MaxView 3.1"
 date:   2017-08-12 19:25:00
-categories: fastone fuzzing
 preview: "A crash in a BMP parser."
 ---
 

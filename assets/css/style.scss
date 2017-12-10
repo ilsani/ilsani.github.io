@@ -7,6 +7,7 @@ body {
     background: #fdfdfd;
     color: #494e52;
     margin: 0 0 100px;
+    line-height: 1.5;
     font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
 }
 
@@ -22,6 +23,10 @@ header h1 {
 
 #main_content h1 {
     font-size: 28px;
+}
+
+#main_content p {
+    font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {

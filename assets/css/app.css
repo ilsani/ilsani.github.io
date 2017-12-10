@@ -5,6 +5,7 @@ html {
     /* height: 100%; */
     box-sizing: border-box;
     position: relative;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
 
 body {

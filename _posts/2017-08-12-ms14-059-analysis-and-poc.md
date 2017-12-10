@@ -1,7 +1,7 @@
 ---
 title:  "MS14-059 - Analysis and POC"
 date:   2017-08-12 19:25:00
-preview: ""
+preview: "A quick review about MS14-059. A security update that resolves a publicly disclosed vulnerability in ASP.NET MVC. "
 ---
 
 A few days ago I was on DotNetNuke's website and decided to look at the latest security updates. In this list, among other things, I saw that DNN has added support for a version of ASP.NET MVC released in 2016.

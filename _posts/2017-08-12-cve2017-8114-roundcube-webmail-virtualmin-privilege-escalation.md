@@ -1,7 +1,7 @@
 ---
 title:  "CVE-2017-8114 - Roundcube Webmail Virtualmin Privilege Escalation"
 date:   2017-08-12 19:25:00
-preview: "An authenticated attacker can execute malicious inputs."
+preview: "Roundcube Webmail allows arbitrary password resets by authenticated users. This affects versions before 1.0.11, 1.1.x before 1.1.9, and 1.2.x before 1.2.5. The problem is caused by an improperly restricted exec call in the virtualmin and sasl drivers of the password plugin."
 ---
 
 * _Author_: Martino Sani 

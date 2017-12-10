@@ -8,12 +8,12 @@ title:  Martino Sani's Blog
 
   {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
   {% for year in postsByYear %}
-  <h2 class="subtitle">{{ year.name }}</h2>
+  <h1 class="subtitle">{{ year.name }}</h1>
 
   {% for post in year.items %}
   <div class="blog-posts">
     <a href="{{ post.url }}">
-      <h3>{{ post.title }}</h3>
+      <h2>{{ post.title }}</h2>
       <p>{{ post.preview }}</p>
     </a>
   </div>

@@ -1,10 +1,8 @@
 ---
+title:  "Does this decryptor really decrypts my files?"
 date:   2017-08-13 10:30:00
 preview: "A story of my last week before the summer holiday and a malware."
 ---
-
-{{ page.title }}
-================
 
 In this post I'll try to summarize a story of my last week before the summer holiday. I must avoid some details, but I hope that the story is interesting.
 

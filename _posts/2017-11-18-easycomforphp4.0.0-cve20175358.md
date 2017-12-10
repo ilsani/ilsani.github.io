@@ -1,10 +1,8 @@
 ---
+title: "EasyCom For PHP 4.0.0 - Buffer Overflow Exploit"
 date: 2017-11-18 22:00:00
 preview: ""
 ---
-
-{{ page.title }}
-================
 
 CVE: CVE-2017-5358
 

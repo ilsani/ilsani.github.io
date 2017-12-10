@@ -1,5 +1,4 @@
 ---
-title:  "MS14-059 - Analysis and POC"
 date:   2017-08-12 19:25:00
 preview: ""
 ---

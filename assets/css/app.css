@@ -52,6 +52,10 @@ div.blog-posts p {
     margin-top: 5px;
 }
 
+.blog-posts a {
+    color: #111;
+}
+
 
 /*
 ul.blog {

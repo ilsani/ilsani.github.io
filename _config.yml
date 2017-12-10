@@ -12,7 +12,7 @@ locale                   : "en"
 title                    : "Martino Sani"
 title_separator          : "-"
 name                     : "Martino Sani"
-description              : "An amazing website."
+description              : 
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -86,7 +86,7 @@ author:
   name             : "Martino Sani"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : 
-  location         : "Somewhere"
+  location         : 
   email            : "martino.sani@gmail.com"
   uri              :
   bitbucket        :

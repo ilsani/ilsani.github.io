@@ -1,6 +1,7 @@
 ---
-permalink: /
 title: Blog
+permalink: /
+layout: archive
 ---
 
 
@@ -13,3 +14,4 @@ title: Blog
   {% endif %}
   {% include archive-single.html %}
 {% endfor %}
+

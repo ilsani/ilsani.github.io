@@ -1,8 +1,10 @@
 ---
 title: "Blog posts"
-permalink: /blog.html
+permalink: /
 layout: archive
 ---
+
+{% include base_path %}
 
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}

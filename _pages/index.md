@@ -1,7 +1,6 @@
 ---
 permalink: /
 title: Blog
-layout: archive
 ---
 
 {% capture written_year %}'None'{% endcapture %}

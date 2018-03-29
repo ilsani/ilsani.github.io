@@ -5,7 +5,7 @@ preview: "Multiple vulnerabilities have been identified in ntopng, the next gene
 ---
 
 * _Author_: Martino Sani
-* _Version_: Before 3.0
+* _Version_: before 3.0
 * _CVE_: CVE-2017-7416, CVE-2017-7458, CVE-2017-7459
 
 ntopng is the next generation version of the original ntop, a network traffic probe that monitors network usage. ntopng is based on libpcap and it has been written in a portable way in order to virtually run on every Unix platform, MacOSX and on Windows as well.

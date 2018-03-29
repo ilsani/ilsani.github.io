@@ -14,7 +14,7 @@ Multiple issues have been identified in ntopng before version 3.
 
 ## CVE-2017-7416
 
-ntopng before 3.0 allows XSS because GET and POST parameters are improperly validated.
+ntopng before 3.0 allows multiple XSS because GET and POST parameters are improperly validated.
 
 ## CVE-2017-7458
 

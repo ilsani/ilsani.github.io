@@ -1,5 +1,5 @@
 ---
-title:  "Joomla Event Manager 2.1.4 - Multiple Vulnerabilities"
+title:  "Multiple vulnerabilities in Joomla Event Manager 2.1.4"
 date:   2017-08-10 20:00:00
 preview: "A couple of security issues in Joomla Event Manager plugin, JEM 2.1.4."
 ---

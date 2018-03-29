@@ -1,5 +1,5 @@
 ---
-title:  "CVE-2017-6078 - Crash in FastStone MaxView 3.1"
+title:  "Crash in FastStone MaxView 3.1 (CVE-2017-6078)"
 date:   2017-08-12 19:25:00
 preview: "FastStone MaxView 3.0 and 3.1 allows user-assisted attackers to cause a denial of service (application crash) via a malformed BMP image with a crafted biSize field in the BITMAPINFOHEADER section."
 ---

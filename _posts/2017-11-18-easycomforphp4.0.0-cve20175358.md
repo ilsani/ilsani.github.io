@@ -66,3 +66,5 @@ $conn = i5_connect($payload, "QPGMR", "PASSW") or die(i5_errormsg());
 * [hyp3rlinx](http://hyp3rlinx.altervista.org/advisories/EASYCOM-PHP-API-BUFFER-OVERFLOW.txt)
 * [SEH exploitation tutorial](http://www.thegreycorner.com/2010/01/seh-stack-based-windows-buffer-overflow.html)
 * [exploit-db PoC](https://www.exploit-db.com/exploits/41425/)
+
+The author is not responsible for the misuse of the information provided in this advisory.

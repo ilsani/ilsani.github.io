@@ -29,3 +29,5 @@ ntopng before 3.0 allows HTTP Response Splitting attack.
 * [CVE-2017-7416](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7416)
 * [CVE-2017-7458](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7458)
 * [CVE-2017-7459](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7459)
+
+The author is not responsible for the misuse of the information provided in this advisory.

@@ -50,20 +50,6 @@ PHP interpreter should not crash.
 ```
 Program received signal SIGSEGV, Segmentation fault.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 0x0000000001f7e049 in php_zip_pcre (regexp=<optimized out>, path=0x0, path_len=<optimized out>, return_value=<optimized out>) at ext/zip/php_zip.c:610
 warning: Source file is more recent than executable.
 610             if (!IS_ABSOLUTE_PATH(path, path_len)) {
@@ -90,5 +76,4 @@ path = 0x0
 * 2016-07-23: Vendor notification.
 * 2016-07-24: Vendor fixes the issue.
 	
-
-
+The author is not responsible for the misuse of the information provided in this advisory.

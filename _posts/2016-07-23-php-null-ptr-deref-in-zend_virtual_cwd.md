@@ -44,6 +44,7 @@ make && make install
 # Test script
 
 ```php
+<?php
 $zip = new ZipArchive();
 $zip->open("foo.zip", ZIPARCHIVE::CREATE);
 $zip->addPattern("/\./");

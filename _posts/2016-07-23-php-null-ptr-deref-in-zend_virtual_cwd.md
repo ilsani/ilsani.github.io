@@ -17,36 +17,46 @@ I triggered the issue through `ZipArchive::addPattern` function and ZTS (Zend Th
 [ZipArchive.AddPatter](http://php.net/manual/en/ziparchive.addpattern.php) reports that the default value of $path argument is `.` but in my tests it was null.
 
 `zend_virtual_cwd.h (line 112)`:
+
 ```c
 #ifndef IS_ABSOLUTE_PATH
 #define IS_ABSOLUTE_PATH(path, len) \
         (IS_SLASH(path[0]))
 #endif
 ```
+
 `php_zip.c (line 609)`:
+
 ```c
 #ifdef ZTS
 if (!IS_ABSOLUTE_PATH(path, path_len)) {
    result = VCWD_GETCWD(cwd, MAXPATHLEN);
 ```
+
 # PHP build
+
 ```
 ./buildconf --force
 ./configure --enable-zip --enable-maintainer-zts
 make && make install
 ```
+
 # Test script
-```
+
+```php
 $zip = new ZipArchive();
 $zip->open("foo.zip", ZIPARCHIVE::CREATE);
 $zip->addPattern("/\./");
 $zip->close();
 ?>
 ```
+
 # Expected result
+
 PHP interpreter should not crash.
 
 # Actual result
+
 ```
 Program received signal SIGSEGV, Segmentation fault.
 
@@ -73,6 +83,7 @@ path = 0x0
 ```
 
 # Notes
+
 * 2016-07-23: Vendor notification.
 * 2016-07-24: Vendor fixes the issue.
 	

@@ -25,7 +25,7 @@ CWD_API int virtual_file_ex(cwd_state *state, const char *path, verify_path_func
 ```
 
 The issue is triggerable via `addEmptyDir` and `extractTo` Zip extension methods, if not existing zip archive will be opened.
-Vulnerable code into extractTo method (`php_zip.c`) is shown below:
+Vulnerable code into `extractTo` method (`php_zip.c`) is shown below:
 
 ```c
 /* Extract all files */
@@ -58,7 +58,7 @@ make && make install
 
 # Test script
 
-```
+```php
 <?php
 
 $zip = new ZipArchive();

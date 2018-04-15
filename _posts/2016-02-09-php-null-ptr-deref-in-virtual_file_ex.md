@@ -18,7 +18,7 @@ A malicious user could create an evil php script in order to crash the PHP inter
 `zend_virtual_cwd.c`:
 
 ```c
-CWD_API int virtual_file_ex(cwd_state *state, const char *path, verify_path_func verify_path, int use_realpath) /* {{{ */
+CWD_API int virtual_file_ex(cwd_state *state, const char *path, verify_path_func verify_path, int use_realpath)
 {
     // path could be NULL
     int path_length = (int)strlen(path);

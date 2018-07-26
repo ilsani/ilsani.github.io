@@ -11,8 +11,6 @@ In this post I'll try to summarize a story of my last week before the summer hol
 The week started as usual, but Monday morning became more interesting very quickly. One of my work contact wrote me that one of his Clients has found strange files into one of his server and some documents were corrupted.
 Just after a brief description it was clear that the server has been compromised by a ransomware.<br />
 
-I think that in this case the first questions are: **DID I BACKUP MY DATA?** and **WHERE ARE MY BACKUP?**<br />
-
 Unfortunately those guys had not any backup. I do not know the rest of their days but I'm sure that they did not get bored.
 
 ## The Reckoning Day

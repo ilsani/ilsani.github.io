@@ -6,7 +6,7 @@ excerpt: "Stack-based buffer overflows in EasyCom for PHP 4.0.0.29 allows remote
 
 John Page (*Hyp3rlinX*) discovered a stack-based buffer overflows in EasyCom for PHP 4.0.0.29. This issue can lead to arbitrary code execution by a remote attacker. I created a working exploit for fun and as my OSCE exam preparation.
 
-The bug is located in `php_Easycom5_3_0.dll` and affected API functions are `i5_connect`, `i5_pconnect`, or `i5_private_connect`.
+Bug is located in `php_Easycom5_3_0.dll` and affected API functions are `i5_connect`, `i5_pconnect`, or `i5_private_connect`.
 
 ## Environment
 * EasycomPHP_4.0029.iC8im2.exe

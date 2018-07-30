@@ -17,7 +17,7 @@ permalink: /advisories/
     {% for advisory in site.data.advisories %}
     <tr>
       <td>{{ advisory.date }}</td>
-      <td><a target="_blank" href=
+      <td><a href=
 	     {% if advisory.link contains "http" and advisory.link contains "://" %}
 	     "{{ advisory.link }}"
 	     {% else %}

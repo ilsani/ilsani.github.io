@@ -65,6 +65,9 @@ WinDbg session:
 #============================================================================================
 ```
 
+## References
+- (CVE-2017-6078)[https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6078)
+
 ## Timeline ##
 
 * 2017-02-11: Vendor notification (1st attempt).

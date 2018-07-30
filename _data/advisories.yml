@@ -1,7 +1,7 @@
 - title: Roundcube Webmail Virtualmin Privilege Escalation
   date: 28/04/2017
   cvs: [ CVE-2017-8114 ]
-  link: https://ilsanidev.github.io/cve2017-8114-roundcube-webmail-virtualmin-privilege-escalation/
+  link: https://martinosani.it/cve2017-8114-roundcube-webmail-virtualmin-privilege-escalation/
 
 - title: ntopng before 3.0 allows multiple XSS
   date: 04/04/2017
@@ -21,7 +21,7 @@
 - title: Crash in FastStone MaxView 3.1
   date: 20/02/2017
   cvs: CVE-2017-6078
-  link: https://ilsanidev.github.io/cve2017-6078-fastone-maxview/
+  link: https://martinosani.it/cve2017-6078-fastone-maxview/
   
 - title: Multiple vulnerabilities in Joomla Event Manager 2.1.4
   date: 12/08/2015

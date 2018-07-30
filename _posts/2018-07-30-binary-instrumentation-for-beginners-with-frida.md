@@ -10,13 +10,13 @@ The article writer says that he was playing with Heap Spraying and he felt the n
 
 # Setup
 
-I use `Microsoft Windows 7 Ultimate x86 6.1.7601 SP1` and `Python 3.6.6`. I tried to install Frida with command below but I had a lot of trouble:
+I use `Microsoft Windows 7 Ultimate x86 6.1.7601 SP1` and `Python 3.6.6`. I tried to install Frida from remote pypi.org with command below but I had a lot of trouble:
 
 ```
 C:\Python36-32\Scripts\>pip install frida
 ```
 
-Instead, I downloaded Frida package `frida-12.0.7-py3.6-win32.egg` from `https://pypi.org/project/frida/`.
+Instead, I downloaded directly the package `frida-12.0.7-py3.6-win32.egg` from `https://pypi.org/project/frida/`.
 
 # ...
 

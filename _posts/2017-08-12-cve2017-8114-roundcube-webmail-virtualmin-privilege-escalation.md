@@ -4,9 +4,9 @@ date:   2017-08-12 19:25:00
 excerpt: "Roundcube Webmail allows arbitrary password resets by authenticated users. This affects versions before 1.0.11, 1.1.x before 1.1.9, and 1.2.x before 1.2.5. The problem is caused by an improperly restricted exec call in the virtualmin and sasl drivers of the password plugin."
 ---
 
-I discovered this security issue during my for fun [and no-profit] code review activities. CVE: CVE-2017-8114
+I discovered this security issue (CVE-2017-8114) during my for fun and no-profit code review activities.
 
-(Roundcube Webmail)[https://roundcube.net/] is a browser-based multilingual IMAP client with an application-like user interface. Roundcube version 1.3-beta and probably previous versions do not properly sanitize client's inputs. This can lead to an arbitrary password resets by authenticated users.
+[Roundcube Webmail](https://roundcube.net/){:target="_blank"} is a browser-based multilingual IMAP client with an application-like user interface. Roundcube version 1.3-beta and probably previous versions do not properly sanitize client's inputs. This can lead to an arbitrary password resets by authenticated users.
 
 Roundcube uses multiple plugins that extend its functionalities. They are not part of the core application but can be installed individually. Roundcube comes with a number of plugins, and more third-party plugins are available for download.
 

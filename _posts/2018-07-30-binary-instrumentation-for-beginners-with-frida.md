@@ -4,7 +4,7 @@ date: 2018-07-30 20:00:00
 excerpt: ""
 ---
 
-After I got OSCE my interest about memory exploitation growing. Like every baby when move his first steps, I am really excited when I learn and experimenting new stuff about this topic. A couple of days ago I read a (great article)[http://deniable.org/reversing/binary-instrumentation] about binary instrumentation using multiple tools (i.e. Pin, DynamoRIO, Frida). That article introduces interesting concepts proposing code samples using Pin and DynamoRIO, and left the Frida implementation to the reader. So, I decided to try it myself.
+After I got OSCE my interest about memory exploitation growing. Like every baby when move his first steps, I am really excited when I learn and experimenting new stuff about this topic. A couple of days ago I read a [great article](http://deniable.org/reversing/binary-instrumentation) about binary instrumentation using multiple tools (i.e. Pin, DynamoRIO, Frida). That article introduces interesting concepts proposing code samples using Pin and DynamoRIO, and left the Frida implementation to the reader. So, I decided to try it myself.
 
 The article writer says that he was playing with Heap Spraying and he felt the need of logging all the memory allocations his code was performing, so he wrote a Pintool to trace these allocations and detect basic memory leaks, double frees and invalid frees.
 

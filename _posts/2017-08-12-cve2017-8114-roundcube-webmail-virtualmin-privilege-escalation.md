@@ -4,7 +4,7 @@ date:   2017-08-12 19:25:00
 excerpt: "Roundcube Webmail allows arbitrary password resets by authenticated users. This affects versions before 1.0.11, 1.1.x before 1.1.9, and 1.2.x before 1.2.5. The problem is caused by an improperly restricted exec call in the virtualmin and sasl drivers of the password plugin."
 ---
 
-I discovered this security issue (CVE-2017-8114) during my for fun and no-profit code review activities.
+I discovered this security issue during my for fun and no-profit code review activities.
 
 [Roundcube Webmail](https://roundcube.net/){:target="_blank"} is a browser-based multilingual IMAP client with an application-like user interface. Roundcube version 1.3-beta and probably previous versions do not properly sanitize client's inputs. This can lead to an arbitrary password resets by authenticated users.
 
@@ -14,7 +14,7 @@ Official *password* plugin in its *virtualmin* driver allows to an attacker, tha
 
 ## Technical Details ##
 
-`Save()` method in `virtualmin.php` uses an `exec()` function without properly filter user-supplied inputs:
+`save()` method in `virtualmin.php` uses an `exec()` function without properly filter user-supplied inputs:
 ```php
 class rcube_virtualmin_password {
 
@@ -42,7 +42,7 @@ class rcube_virtualmin_password {
 
 Thanks to `escapeshellcmd()` an attacker can not execute arbitrary commands, but can use arbitrary `modify-user` parameters.
 
-`chgvirtualminpasswd` is a simple wrapper to [virtualmin](https://www.virtualmin.com/) that must run as root, which makes this injection more interesting. For the list of `modify-user` parameters see [virtualmin-doc](https://www.virtualmin.com/documentation/developer/cli/modify_user).
+`chgvirtualminpasswd` is a simple wrapper to [virtualmin](https://www.virtualmin.com/){:target="_blank"} that must run as root, which makes this injection more interesting. For the list of `modify-user` parameters see [virtualmin-doc](https://www.virtualmin.com/documentation/developer/cli/modify_user){:target="_blank"}.
 
 As example, a malicious user can inject custom string as `$newpass` and reset the password of an arbitrary user.
 Attacker, authenticated as `mark`, can insert following string as new password:
@@ -62,7 +62,7 @@ If ssh service is open and reachable, the attacker can login using the victim's 
 pass --shell /bin/bash
 ```
 
-Vendor promptly fixes the issue and a similar bug in `sasl` driver. [(Roundcube Project News)](https://roundcube.net/news/2017/04/28/security-updates-1.2.5-1.1.9-and-1.0.11)
+Vendor promptly fixes the issue and a similar bug in `sasl` driver. [Roundcube Project News](https://roundcube.net/news/2017/04/28/security-updates-1.2.5-1.1.9-and-1.0.11){:target="_blank"}
 
 ## Timeline ##
 

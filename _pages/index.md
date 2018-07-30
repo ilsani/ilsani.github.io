@@ -7,7 +7,7 @@ Hi :-)
 
 My name is Martino Sani. I'm an <strong>IT Security Consultant</strong> focused on application security, such as web application penetration test and secure code auditing.
 
-I work as Core Security Researcher at Cobalt.io, a crowdsourced SaaS penetration testing platform. For fun and [sometimes] profit I try to find bugs on bug bounty platforms, such as [HackerOne](https://hackerone.com/ilsani?sort_type=latest_disclosable_activity_at&filter=type%3Aall%20from%3Ailsani&page=1&range=forever)
+I work as Core Security Researcher at Cobalt.io, a crowdsourced SaaS penetration testing platform. For fun and [sometimes] profit I try to find bugs on bug bounty platforms, such as [HackerOne](https://hackerone.com/ilsani?sort_type=latest_disclosable_activity_at&filter=type%3Aall%20from%3Ailsani&page=1&range=forever){:target="_blank"}.
 
 From 2011 to 2014 and from 2016 to 2017 I worked as <strong>Software Engineer</strong> at [Blue Eye Solutions](href="http://www.besolutions.it/), a software house based in Parma, Italy. Here I developed document flow software using Java, Microsoft .NET Framework and Angular2. My main activities were: R&D projects, legacy code maintenance and guarantee the correctness of the delivered software following the day to day software development life cycle and delivery processes.
 

@@ -9,12 +9,12 @@
   link: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7416
 
 - title: NULL pointer dereference in ntopng before 3.0 
-  date: 05/04/2018
+  date: 05/04/2017
   cvs: [ CVE-2017-7458 ]
   link: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7458
 
 - title: HTTP response splitting in ntopng before 3.0
-  date: 05/04/2018
+  date: 05/04/2017
   cvs: [ CVE-2017-7459 ]
   link: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7459
 
@@ -23,13 +23,8 @@
   cvs: CVE-2017-6078
   link: http://martinosani.it/cve2017-6078-fastone-maxview/
   
-- title: Multiple vulnerabilities in Joomla Event Manager 2.1.4
-  date: 12/08/2015
-  cvs: []
-  link: http://martinosani.it/multiple-vulnerabilities-in-joomla-event-manager-2.1.4/
-
 - title: PHP NULL pointer dereference in zend_virtual_cwd (v. master-Git-2016-07-23)
-  date: 23/07/2017
+  date: 23/07/2016
   cvs: []
   link: https://bugs.php.net/bug.php?id=72660
   
@@ -37,3 +32,8 @@
   date: 09/02/2016
   cvs: []
   link: https://bugs.php.net/bug.php?id=71561
+
+- title: Multiple vulnerabilities in Joomla Event Manager 2.1.4
+  date: 12/08/2015
+  cvs: []
+  link: http://martinosani.it/multiple-vulnerabilities-in-joomla-event-manager-2.1.4/

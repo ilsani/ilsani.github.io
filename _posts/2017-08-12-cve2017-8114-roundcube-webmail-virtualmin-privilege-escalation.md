@@ -10,7 +10,7 @@ I discovered this security issue (CVE-2017-8114) during my for fun and no-profit
 
 Roundcube uses multiple plugins that extend its functionalities. They are not part of the core application but can be installed individually. Roundcube comes with a number of plugins, and more third-party plugins are available for download.
 
-Official *Password* plugin in its *virtualmin* driver allows to an attacker, that has a valid username/password to login in his web panel, to execute malicious inputs. This could allow to an attacker to reset victim's password and in some scenarios getting a system shell.
+Official *password* plugin in its *virtualmin* driver allows to an attacker, that has a valid username/password to login in his web panel, to execute malicious inputs. This could allow to an attacker to reset victim's password and in some scenarios getting a system shell.
 
 ## Technical Details ##
 

@@ -4,16 +4,9 @@ date:   2017-08-10 20:00:00
 excerpt: "A couple of security issues in Joomla Event Manager plugin, JEM 2.1.4."
 ---
 
-* _Author_: Martino Sani
-* _Release date_: 2015-08-12
-* _Vendor Homepage_: www.joomlaeventmanager.net
-* _Software Link_: www.joomlaeventmanager.net/download?download=50:jem-2-1-4-stable
-* _Version_: 2.1.4
-* _Google Dork_: inurl:option=com_jem
-* _Exploit-DB_: www.exploit-db.com/exploits/37767/
-* _CVE_: -
+I identified some vulnerabilities and insecure settings in [Joomla Event Manager plugin, JEM 2.1.4](www.joomlaeventmanager.net/download?download=50:jem-2-1-4-stable){:target="_blank"}. A malicious user could use these issues to access back-end database data and attack application clients. Attacker must have valid credentials to exploit these issues.
 
-I identified some vulnerabilities and insecure settings in Joomla Event Manager plugin, JEM 2.1.4. A malicious user could use these issues to access back-end database data and attack application clients. Attacker must have valid authentication credentials to exploit these issues.
+Some websites which use this Joomla plugin can be found using the Google dork: `inurl:option=com_jem`
 
 ## SQL Injection
 
@@ -56,6 +49,10 @@ Default JEM settings allow to upload HTML/HTM files as event's attachment. An au
 Attachments process is handled by */site/classes/attachments.class.php* file.
 
 File types allowed by default are in the */admin/sql/install.mysql.utf.sql* file.
+
+## References
+
+- [ExploitDB](www.exploit-db.com/exploits/37767/){:target="_blank"}
 
 ## Timeline
 

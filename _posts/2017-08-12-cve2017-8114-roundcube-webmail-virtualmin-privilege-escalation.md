@@ -62,7 +62,7 @@ If ssh service is open and reachable, the attacker can login using the victim's 
 pass --shell /bin/bash
 ```
 
-Vendor promptly fixes the issue and a similar bug in `sasl` driver. [Roundcube Project News](https://roundcube.net/news/2017/04/28/security-updates-1.2.5-1.1.9-and-1.0.11){:target="_blank"}
+Vendor promptly fixes the issue and a similar bug in `sasl` driver. [Roundcube Project News](https://roundcube.net/news/2017/04/28/security-updates-1.2.5-1.1.9-and-1.0.11){:target="_blank"}.
 
 ## Timeline ##
 

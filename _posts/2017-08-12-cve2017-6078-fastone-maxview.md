@@ -4,9 +4,9 @@ date:   2017-08-12 19:25:00
 excerpt: "FastStone MaxView 3.0 and 3.1 allows user-assisted attackers to cause a denial of service (application crash) via a malformed BMP image with a crafted biSize field in the BITMAPINFOHEADER section."
 ---
 
-I finally got time and bravery to try Peach Fuzzer. I have never used it, so I decided to fuzzing a random but possibily easy target. I chose [FastStone MaxView 3.1](http://www.faststone.org/FSMaxViewDownload.htm){:target="_blank"}.
+I finally got time and bravery to try Peach Fuzzer. I have never used it, so I decided to start with a random but possibily easy target. I chose [FastStone MaxView 3.1](http://www.faststone.org/FSMaxViewDownload.htm){:target="_blank"}.
 
-FastStone MaxView is an image viewer that supports all major graphic formats. Among the formats that it supports BMP is obviously present. I decided to start my fuzzing from FSMaxView's BMP parser.
+FastStone MaxView is an image viewer that supports all major graphic formats. Among the formats that it supports BMP is obviously present. I decided to start my fuzzing adventures from the FSMaxView's BMP parser.
 
 BMP is a fairly simple format, I did not expect to find something but... after a week of fuzzing... Peach claims to have found a fault.
 
@@ -18,7 +18,7 @@ In a nutshell a BMP file starts with the following sections:
 BITMAPFILEHEADER (14 bytes) + BITMAPINFOHEADER (40 bytes) + ...
 ```
 
-BITMAPINFOHEADER has multiple fields that tell the detailed information about the image, which will be used to display the image on the screen. As one of these fields, *biSize* field specifies the size of the BITMAPINFOHEADER header. If *biSize* has a crafted value that not respect the real size of the BITMAPINFOHEADER header in the image, FSMaxView's BMP parser will crash with an `ACCESS_VIOLATION_EXCEPTION`.
+`BITMAPINFOHEADER` has multiple fields that tell the detailed information about the image, which will be used to display the image on the screen. As one of these fields, `biSize` field specifies the size of the `BITMAPINFOHEADER` header. If `biSize` has a crafted value that not respect the real size of the `BITMAPINFOHEADER` header in the image, FSMaxView's BMP parser will crash with an `ACCESS_VIOLATION_EXCEPTION`.
 
 WinDbg session:
 

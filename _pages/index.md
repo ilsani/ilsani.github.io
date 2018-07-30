@@ -1,6 +1,7 @@
 ---
 title: ""
 permalink: /
+redirect_from: "/php-null-ptr-deref-in-virtual_file_ex/"
 ---
 
 Hi :-)

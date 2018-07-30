@@ -4,7 +4,7 @@ date:   2017-08-10 20:00:00
 excerpt: "A couple of security issues in Joomla Event Manager plugin, JEM 2.1.4."
 ---
 
-I identified some vulnerabilities and insecure settings in [Joomla Event Manager plugin, JEM 2.1.4](www.joomlaeventmanager.net/download?download=50:jem-2-1-4-stable){:target="_blank"}. A malicious user could use these issues to access back-end database data and attack application clients. Attacker must have valid credentials to exploit these issues.
+I identified some vulnerabilities and insecure settings in [Joomla Event Manager plugin, JEM 2.1.4](https://www.joomlaeventmanager.net/download?download=50:jem-2-1-4-stable){:target="_blank"}. A malicious user could use these issues to access back-end database data and attack application clients. Attacker must have valid credentials to exploit these issues.
 
 Some websites which use this Joomla plugin can be found using the Google dork: `inurl:option=com_jem`
 

@@ -1,0 +1,18 @@
+---
+title: Tools
+permalink: /tools/
+---
+
+{% for tool in site.data.tools %}
+<div class="tool">
+  <h2>{{ tool.name }}</h2>
+  <div class="tool-description"><span>{{ tool.title }}</span></div>
+  <div class="tool-link"> <a href=
+			     {% if tool.link contains "http" and tool.link contains "://" %}
+			     "{{ tool.link }}"
+			     {% else %}
+			     "{{ tool.link | prepend: "/tools/" | prepend: base_path }}"
+			     {% endif %}
+			     >Download</a></div>
+</div>
+{% endfor %}

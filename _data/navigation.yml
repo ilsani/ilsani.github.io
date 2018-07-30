@@ -1,0 +1,17 @@
+
+main:
+
+  - title: "About"
+    url: /
+
+  - title: "Blog"
+    url: /blog/
+
+  - title: "Advisories"
+    url: /advisories/
+
+  - title: "Tools"
+    url: /tools/
+    
+
+    

@@ -52,7 +52,7 @@ File types allowed by default are in the */admin/sql/install.mysql.utf.sql* file
 
 ## References
 
-- [ExploitDB](www.exploit-db.com/exploits/37767/){:target="_blank"}
+- [ExploitDB](https://www.exploit-db.com/exploits/37767/){:target="_blank"}
 
 ## Timeline
 

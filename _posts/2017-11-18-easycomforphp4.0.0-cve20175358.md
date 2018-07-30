@@ -1,12 +1,12 @@
 ---
-title: "EasyCom For PHP 4.0.0 - Buffer Overflow Exploit"
+title: "Buffer overflow exploit in EasyCom For PHP 4.0.0 (CVE-2017-5358)"
 date: 2017-11-18 22:00:00
 excerpt: "Stack-based buffer overflows in php_Easycom5_3_0.dll in EasyCom for PHP 4.0.0.29 allows remote attackers to execute arbitrary code via the server argument to the (1) i5_connect, (2) i5_pconnect, or (3) i5_private_connect API function."
 ---
 
-John Page (*Hyp3rlinX*) discovered a stack-based buffer overflows in EasyCom for PHP 4.0.0.29 (**CVE-2017-5358**). This security issue allows to a remote attacker to execute arbitrary code via the server argument to the API functions `i5_connect`, `i5_pconnect`, or `i5_private_connect`. All these functions are implemented inside `php_Easycom5_3_0.dll`.
+John Page (*Hyp3rlinX*) discovered a stack-based buffer overflows in EasyCom for PHP 4.0.0.29. This issue can lead to arbitrary code execution by a remote attacker to execute. I created a working exploit for fun and as my OSCE exam preparation.
 
-I created a working exploit for fun and as my OSCE exam preparation.
+The bug is located in `php_Easycom5_3_0.dll` and affected API functions are `i5_connect`, `i5_pconnect`, or `i5_private_connect`.
 
 ## Environment
 * EasycomPHP_4.0029.iC8im2.exe

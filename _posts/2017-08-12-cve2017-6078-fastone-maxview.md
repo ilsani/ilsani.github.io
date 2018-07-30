@@ -66,7 +66,7 @@ WinDbg session:
 ```
 
 ## References
-- (CVE-2017-6078)[https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6078)
+- [CVE-2017-6078](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6078)
 
 ## Timeline ##
 

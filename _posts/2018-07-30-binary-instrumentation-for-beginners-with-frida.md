@@ -4,19 +4,19 @@ date: 2018-07-30 20:00:00
 excerpt: ""
 ---
 
-After I got OSCE my interest about memory exploitation growing. Like every baby when move his first steps, I am really excited when I learn and experimenting new stuff about this topic. A couple of days ago I read a (great article)[] about binary instrumentation using multiple tools (i.e. Pin, DynamoRIO, Frida). That article introduces interesting concepts proposing code samples using Pin and DynamoRIO, and left the Frida implementation to the reader. So, I decided to try it myself.
+After I got OSCE my interest about memory exploitation growing. Like every baby when move his first steps, I am really excited when I learn and experimenting new stuff about this topic. A couple of days ago I read a (great article)[http://deniable.org/reversing/binary-instrumentation] about binary instrumentation using multiple tools (i.e. Pin, DynamoRIO, Frida). That article introduces interesting concepts proposing code samples using Pin and DynamoRIO, and left the Frida implementation to the reader. So, I decided to try it myself.
 
 The article writer says that he was playing with Heap Spraying and he felt the need of logging all the memory allocations his code was performing, so he wrote a Pintool to trace these allocations and detect basic memory leaks, double frees and invalid frees.
 
 # Setup
 
-I use Microsoft Windows 7 Ultimate x86 6.1.7601 SP1 and Python 3.6.6. I tried to install Frida with command below but I had a lot of trouble:
+I use `Microsoft Windows 7 Ultimate x86 6.1.7601 SP1` and `Python 3.6.6`. I tried to install Frida with command below but I had a lot of trouble:
 
 ```
 C:\Python36-32\Scripts\>pip install frida
 ```
 
-Instead, I downloaded Frida package `frida-12.0.7-py3.6-win32.egg` from `https://pypi.org/project/frida/".
+Instead, I downloaded Frida package `frida-12.0.7-py3.6-win32.egg` from `https://pypi.org/project/frida/`.
 
 # ...
 

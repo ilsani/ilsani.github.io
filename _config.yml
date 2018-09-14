@@ -9,7 +9,7 @@ description              :
 url                      :
 baseurl                  :
 teaser                   :
-words_per_minute         : 200
+words_per_minute         : 201
 
 # SEO Related
 google_site_verification :
@@ -107,7 +107,6 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-redirect-from
-  - jekyll-remote-theme
 
 # mimic GitHub Pages with --safe
 whitelist:

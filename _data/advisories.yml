@@ -1,3 +1,8 @@
+- title: BestXsoftware Best Free Keylogger 5.2.9 Privilege Escalation
+  date: 19/10/2018
+  cvs: [ CVE-2018-18519 ]
+  link: https://github.com/ilsani/rd/tree/master/security-advisories/bestxsoftware/cve-2018-18519
+  
 - title: Roundcube Webmail Virtualmin Privilege Escalation
   date: 28/04/2017
   cvs: [ CVE-2017-8114 ]

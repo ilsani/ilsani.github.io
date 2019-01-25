@@ -16,7 +16,7 @@ I work as Security Consultant at [Minded Security](https://www.mindedsecurity.co
 
 For fun and [sometimes] profit I try to find bugs on bug bounty platforms, such as on [Cobalt.io](https://app.cobalt.io/ilsani){:target="_blank"} a crowdsourced SaaS penetration testing platform and on [HackerOne](https://hackerone.com/ilsani?sort_type=latest_disclosable_activity_at&filter=type%3Aall%20from%3Ailsani&page=1&range=forever){:target="_blank"}
 
-# I am a [Detectify](https://detectify.com/){:target="_blank"} member as CrowdSource Researcher.
+<!-- I am a [Detectify](https://detectify.com/){:target="_blank"} member as CrowdSource Researcher. -->
 
 From 2011 to 2014 and from 2016 to 2017 I worked as <strong>Software Engineer</strong> at [Blue Eye Solutions](http://www.besolutions.it){:target="_blank"}, a software house based in Parma, Italy. Here I developed document flow software using Java, Microsoft .NET Framework and Angular2. My main activities were: R&D projects, legacy code maintenance and guarantee the correctness of the delivered software following the day to day software development life cycle and delivery processes.
 

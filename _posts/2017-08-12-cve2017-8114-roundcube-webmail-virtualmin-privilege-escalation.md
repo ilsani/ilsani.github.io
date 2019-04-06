@@ -45,7 +45,7 @@ Thanks to `escapeshellcmd()` function an attacker can not execute arbitrary comm
 `chgvirtualminpasswd` is a simple wrapper to [virtualmin](https://www.virtualmin.com/){:target="_blank"} that must run as root, which makes this injection more interesting. For the list of `modify-user` parameters see [virtualmin-doc](https://www.virtualmin.com/documentation/developer/cli/modify_user){:target="_blank"}.
 
 As example, a malicious user can inject a custom string as `$newpass` resetting the password of an arbitrary user.
-Attacker, authenticated as `mark`, can insert following string as new password:
+Attacker, authenticated as `mark`, can insert the following string as new password:
 ```
 foo --user john --pass hacked 
 ```

@@ -40,24 +40,24 @@ class rcube_virtualmin_password {
 
 `escapeshellarg()` adds single quotes around a string and quotes/escapes any existing single quotes allowing you to pass a string directly to a shell function and having it be treated as a single safe argument. This function should be used to escape individual arguments to shell functions coming from user input. The shell functions include `exec()`, `system()` and the backtick operator.
 
-Thanks to `escapeshellcmd()` an attacker can not execute arbitrary commands, but can use arbitrary `modify-user` parameters.
+Thanks to `escapeshellcmd()` function an attacker can not execute arbitrary commands, but can use arbitrary `modify-user` parameters.
 
 `chgvirtualminpasswd` is a simple wrapper to [virtualmin](https://www.virtualmin.com/){:target="_blank"} that must run as root, which makes this injection more interesting. For the list of `modify-user` parameters see [virtualmin-doc](https://www.virtualmin.com/documentation/developer/cli/modify_user){:target="_blank"}.
 
-As example, a malicious user can inject custom string as `$newpass` and reset the password of an arbitrary user.
+As example, a malicious user can inject a custom string as `$newpass` resetting the password of an arbitrary user.
 Attacker, authenticated as `mark`, can insert following string as new password:
 ```
 foo --user john --pass hacked 
 ```
 
-`Exec()` will execute following command:
+The `exec()` function will execute following command:
 ```
 chgvirtualminpasswd modify-user --domain localhost --user mark --pass foo --user john --pass hacked
 ```
 
-last `--user` and `--pass` parameters will be evaluated by `chgvirtualminpasswd` and the victim’s (john) password will be changed.
+In the above command the last `--user` and `--pass` parameters will be evaluated by `chgvirtualminpasswd` and the victim’s (`john`) password will be changed.
 
-If ssh service is open and reachable, the attacker can login using the victim's credentials. Or, if ssh service is reachable, but users can't login via an interactive shell (e.g. have a /bin/nologin or /dev/null shell), the attacker can change his shell (e.g. to /bin/bash) injecting below string as `$newpass`:
+If ssh service is open and reachable the attacker can login using the victim's credentials. Or, if ssh service is reachable but users can't login via an interactive shell (e.g. has `/bin/nologin` or `/dev/null` shell), the attacker can change his shell (e.g to `/bin/bash`) injecting the following string as `$newpass`:
 ```
 pass --shell /bin/bash
 ```

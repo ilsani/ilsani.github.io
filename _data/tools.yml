@@ -1,0 +1,7 @@
+- name: webscreen
+  title: Simple tool to screenshot a website. Useful in penetration tests or bug bounty programs where the scope is wide.
+  link: https://github.com/ilsani/webscreen
+
+- name: afl-pytmin
+  title: afl-pytmin is a wrapper of afl-tmin, test case minimizer for American Fuzzy Lop (afl).
+  link: https://github.com/ilsani/afl-pytmin

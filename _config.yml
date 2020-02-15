@@ -46,3 +46,10 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+defaults:
+
+  - scope:
+      path: _posts
+      type: posts
+

@@ -1,12 +1,11 @@
 
 main:
 
-  - title: "About"
-    url: /about/
-
   - title: "Blog"
     url: /
 
   - title: "Advisories"
     url: /advisories/
-    
+
+  - title: "About"
+    url: /about/

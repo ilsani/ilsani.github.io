@@ -45,11 +45,7 @@ include:
 
 author:
     name: "Martino Sani"
-    links:
-      - label: "About"
-        url: "/about"
-      - label: "Advisories"
-        url: "/advisories"
+
 footer:
   links:
     - label: "Twitter"

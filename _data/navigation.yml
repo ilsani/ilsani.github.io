@@ -2,16 +2,11 @@
 main:
 
   - title: "About"
-    url: /
+    url: /about/
 
   - title: "Blog"
-    url: /blog/
+    url: /
 
   - title: "Advisories"
     url: /advisories/
-
-  - title: "Tools"
-    url: /tools/
-    
-
     

@@ -76,4 +76,4 @@ WinDbg session:
 
 The author is not responsible for the misuse of the information provided in this advisory.
 
-[1]:{{ site.url }}/_data/posts/cve2017-6078-fastone-maxview/crash.py.zip
+[1]:{{ site.url }}/assets/posts/cve2017-6078-fastone-maxview/crash.py.zip

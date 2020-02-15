@@ -179,4 +179,4 @@ You can download the full project [here][1].
 * [HtmlHelper.Encode()](https://msdn.microsoft.com/en-us/library/system.web.mvc.htmlhelper.attributeencode(v=vs.118).aspx#M:System.Web.Mvc.HtmlHelper.AttributeEncode(System.String))
 
 
-[1]:{{ site.url }}/_data/posts/ms14-059-analysis-and-poc/ms14-059-sample-project.zip
+[1]:{{ site.url }}/assets/posts/ms14-059-analysis-and-poc/ms14-059-sample-project.zip

@@ -1,4 +1,5 @@
 ---
+permalink: /about/
 redirect_from:
   - /php-null-ptr-deref-in-virtual_file_ex/
   - /php-null-ptr-deref-in-zend_virtual_cwd/
@@ -18,14 +19,7 @@ From 2011 to 2014 and from 2016 to 2017 I worked as <strong>Software Engineer</s
 
 From 2014 to 2016 I worked as <strong>IT Security Consultant</strong> at [Emaze](https://www.emaze.net){:target="_blank"}, a security company based in Milan, Italy. Here I performed multiple types of Security Assessments (vulnerability assessment/penetration testing) for medium and large corporates, such as web application, infrastructure and mobile security analysis in black/white box mode.
 
-I hold some certifications such as:
-
-- [Offensive Security Certification Expert (OSCE)](https://www.offensive-security.com/information-security-certifications/osce-offensive-security-certified-expert/){:target="_blank"}
-- [Offensive Security Certification Professional (OSCP)](https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional){:target="_blank"}
-- [OSSTMM Professional Security Tester (OPST)](http://www.isecom.org/certification/opst.html){:target="_blank"}
-- [GIAC Secure Software Programmer in .NET (GSSP-.NET)](https://www.giac.org/certified-professional/martino-sani/151744){:target="_blank"}
-- [eLearnSecurity Web application Penetration Tester (eWPT)](https://www.elearnsecurity.com/certification/ewpt/){:target="_blank"}
-- [Prince2 Foundation](https://www.prince2.com/eur/what-is-prince2){:target="_blank"}
+I hold some certifications such as: [Offensive Security Certification Expert (OSCE)](https://www.offensive-security.com/information-security-certifications/osce-offensive-security-certified-expert/){:target="_blank"}, [Offensive Security Certification Professional (OSCP)](https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional){:target="_blank"}, [OSSTMM Professional Security Tester (OPST)](http://www.isecom.org/certification/opst.html){:target="_blank"}, [GIAC Secure Software Programmer in .NET (GSSP-.NET)](https://www.giac.org/certified-professional/martino-sani/151744){:target="_blank"}, [eLearnSecurity Web application Penetration Tester (eWPT)](https://www.elearnsecurity.com/certification/ewpt/){:target="_blank"}, [Prince2 Foundation](https://www.prince2.com/eur/what-is-prince2){:target="_blank"}.
 
 You can email me at:
 

@@ -1,7 +1,6 @@
 # Site settings
 title: "Martino Sani"
 locale: "en-US"
-email: 
 description: >
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://martinosani.it" # the base hostname & protocol for your site, e.g. http://example.com
@@ -10,12 +9,9 @@ url: "http://martinosani.it" # the base hostname & protocol for your site, e.g. 
 
 # Site Author 
 author:
-  name: ""
   avatar: "/assets/images/bio.jpg"
   email: "martino.sani@gmail.com"
-  github: "ilsani"
   linkedin: "martino-sani"
-  twitter: "martinosani"
   
 # Analytics
 analytics:

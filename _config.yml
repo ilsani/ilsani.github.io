@@ -1,70 +1,32 @@
 # Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Martino Sani
-email: martino.sani@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
+title: ""
+email: 
+description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://martinosani.it" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: martinosani
-#github_username:  ilsani
-
-header_pages:
-  - about.md
-  - advisories.html
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-theme: minima
-encoding: "utf-8"
-
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-safe: true
-
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-# Plugins (previously gems:)
+#theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.18.1"
+minimal_mistakes_skin: default
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
-  - jekyll-redirect-from
   - jekyll-include-cache
 
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
    - _pages
@@ -81,19 +43,38 @@ include:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# HTML Compression
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+author:
+    name: "Martino Sani"
+    links:
+      - label: "About"
+        url: "/about"
+      - label: "Advisories"
+        url: "/advisories"
 
-defaults:
 
+efaults:
+  # _posts
   - scope:
-      path: _posts
+      path: ""
       type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
   - scope:
-      path: _pages
+      path: "_pages"
       type: pages
+    values:
+      layout: single
+      author_profile: true
 
-
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

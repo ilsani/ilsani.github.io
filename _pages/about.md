@@ -8,9 +8,7 @@ redirect_from:
 
 Hi :-)
 
-My name is Martino Sani. I'm an <strong>IT Security Consultant</strong> focused on application security, such as web application penetration test and secure code auditing.
-
-I work as Security Consultant at [Minded Security](https://www.mindedsecurity.com/){:target="_blank"}, a Software Security Company based in Italy.
+My name is Martino Sani. I work as Senior Security Consultant at [Minded Security](https://www.mindedsecurity.com/){:target="_blank"}, a Software Security Company based in Italy.
 
 For fun and [sometimes] profit I try to find bugs on bug bounty platforms. Such as [Cobalt.io](https://app.cobalt.io/ilsani){:target="_blank"}, a crowdsourced SaaS penetration testing platform, [Synack](https://www.synack.com/red-team/){:target="_blank"} and [HackerOne.](https://hackerone.com/ilsani?sort_type=latest_disclosable_activity_at&filter=type%3Aall%20from%3Ailsani&page=1&range=forever){:target="_blank"}
 

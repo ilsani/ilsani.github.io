@@ -62,7 +62,7 @@ This file imports a lot of functions. Such as:
 
 As all Win32 executable file, *decrypt.exe* has an entry function: WinMain(). After retrieving some environmental information such as the current directory path, the `sub_406080` function is called in order to parse the command line arguments. If command line arguments are less than 2 the function sets the name of the file that contains the decryption key to *decrypt.key* and exits.
 
-![parse main args]({{ site.url }}/assets/images/posts/does-this-decryptor-really-decrypts-my-files/parse-main-args-1.png)
+![parse main args]({{ site.url }}/_data/posts/does-this-decryptor-really-decrypts-my-files/images/parse-main-args-1.png)
 ![decryption key file name]({{ site.url }}/assets/images/posts/does-this-decryptor-really-decrypts-my-files/parse-main-args-2.png)
 
 Otherwise, the function will parse command line arguments if are provided. The parser logic is a straightforward if...else, and the supported arguments are: *-f <<param1>>* and *-k <<param2>>*

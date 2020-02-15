@@ -21,6 +21,10 @@ url: "http://martinosani.it" # the base hostname & protocol for your site, e.g. 
 #twitter_username: martinosani
 #github_username:  ilsani
 
+header_pages:
+  - about.md
+  - portfolio.md
+
 # Build settings
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
@@ -88,3 +92,5 @@ defaults:
   - scope:
       path: "_pages"
       type: "pages"
+
+

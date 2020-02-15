@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}

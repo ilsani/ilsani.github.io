@@ -84,5 +84,5 @@ defaults:
 
   - scope:
       path: _posts
-      type: posts
+      type: post
 

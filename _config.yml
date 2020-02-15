@@ -23,7 +23,7 @@ plugins:
   - jekyll-include-cache
 
 # Outputting
-permalink: /:title/
+permalink: /:categories/:year/:month/:title.html
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -43,9 +43,6 @@ include:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-author:
-    name: "Martino Sani"
-
 # footer:
 #   links:
 #     - label: "Twitter"
@@ -64,7 +61,7 @@ defaults:
   - scope:
       path: ""
     values:
-      author: msani
+      author: "Martino Sani"
       author_profile: true
 
   - scope:
@@ -72,7 +69,7 @@ defaults:
       type: pages
     values:
       layout: single
-      header: { overlay_color: "#c4c4c4"}
+      # header: { overlay_color: "#c4c4c4"}
 
 
 category_archive:

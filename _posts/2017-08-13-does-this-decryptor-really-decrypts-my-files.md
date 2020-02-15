@@ -63,11 +63,11 @@ This file imports a lot of functions. Such as:
 As all Win32 executable file, *decrypt.exe* has an entry function: WinMain(). After retrieving some environmental information such as the current directory path, the `sub_406080` function is called in order to parse the command line arguments. If command line arguments are less than 2 the function sets the name of the file that contains the decryption key to *decrypt.key* and exits.
 
 ![parse main args]({{ site.url }}/_data/posts/does-this-decryptor-really-decrypts-my-files/images/parse-main-args-1.png)
-![decryption key file name]({{ site.url }}/assets/images/posts/does-this-decryptor-really-decrypts-my-files/parse-main-args-2.png)
+![decryption key file name]({{ site.url }}/_data/posts/does-this-decryptor-really-decrypts-my-files/images/parse-main-args-2.png)
 
 Otherwise, the function will parse command line arguments if are provided. The parser logic is a straightforward if...else, and the supported arguments are: *-f <<param1>>* and *-k <<param2>>*
 
-![parse main args if...else]({{ site.url }}/assets/images/posts/does-this-decryptor-really-decrypts-my-files/parse-main-args-3.png)
+![parse main args if...else]({{ site.url }}/_data/posts/does-this-decryptor-really-decrypts-my-files/images/parse-main-args-3.png)
 
 Where *-f* is the file to decrypt and *-k* is the filename that contains the decryption key.
 
@@ -75,13 +75,13 @@ This decryptor has 2 main execution modes:
 1. Batch mode: when above command line arguments are provided it opens a command prompt shell and starts the decryption routine
 2. Interactive mode: when no command line arguments are provided it opens a Win32 window to ask which operation to execute
 
-![win32-gui]({{ site.url }}/assets/images/posts/does-this-decryptor-really-decrypts-my-files/win32gui.png)
+![win32-gui]({{ site.url }}/_data/posts/does-this-decryptor-really-decrypts-my-files/images/win32gui.png)
 
 Both modes run the same routine to start the decryption phase: sub_405AA0.
 
 sub_405AA0 function initializes some settings and calls sub_406E80, where the real decryption of data takes place. The decryption is performed with the CryptDecrypt() Win32 API, which takes the pointer to the encrypted data and the pointer to the decryption key.
 
-![cryptdecrypt]({{ site.url }}/assets/images/posts/does-this-decryptor-really-decrypts-my-files/cryptdecrypt.png)
+![cryptdecrypt]({{ site.url }}/_data/posts/does-this-decryptor-really-decrypts-my-files/images/cryptdecrypt.png)
 
 At the end of this brief analysis it seems that this decryptor really decrypts the data without performing malicious activities :-)
 

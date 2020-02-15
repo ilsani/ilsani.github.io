@@ -22,8 +22,8 @@ url: "http://martinosani.it" # the base hostname & protocol for your site, e.g. 
 #github_username:  ilsani
 
 header_pages:
-  - about.md
-  - advisories.html
+  - _pages/about.md
+  - _pages/advisories.html
 
 # Build settings
 markdown: kramdown

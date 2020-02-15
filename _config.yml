@@ -83,6 +83,8 @@ compress_html:
 defaults:
 
   - scope:
-      path: _posts
-      type: post
-
+      path: "_posts"
+      type: "posts"
+  - scope:
+      path: "_pages"
+      type: "pages"

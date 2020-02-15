@@ -71,6 +71,10 @@ defaults:
       layout: single
       # header: { overlay_color: "#c4c4c4"}
 
+  - scope:
+      path: _posts
+      type: posts
+
 
 category_archive:
   type: liquid

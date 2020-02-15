@@ -1,7 +1,6 @@
 ---
 title: "Martino Sani"
 layout: archive
-permalink: /
 ---
 
 {% include base_path %}

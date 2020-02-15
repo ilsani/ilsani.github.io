@@ -41,4 +41,4 @@
 - title: Multiple vulnerabilities in Joomla Event Manager 2.1.4
   date: 12/08/2015
   cvs: []
-  link: http://martinosani.it/multiple-vulnerabilities-in-joomla-event-manager-2.1.4/
+  link: {{ site.url }}/multiple-vulnerabilities-in-joomla-event-manager-2.1.4

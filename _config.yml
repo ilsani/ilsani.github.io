@@ -66,9 +66,6 @@ sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
-include:
-    - _pages
-    
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

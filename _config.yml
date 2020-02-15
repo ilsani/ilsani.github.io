@@ -1,7 +1,7 @@
 # Welcome to Jekyll!
 
 # Site settings
-title: ""
+title: "Martino Sani"
 email: 
 description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -61,24 +61,17 @@ defaults:
   - scope:
       path: ""
     values:
+      layout: single
+      classes: wide
       author_profile: true
 
   - scope:
       path: _pages
       type: pages
-    values:
-      layout: single
-      author_profile: true
-      classes: wide
 
   - scope:
       path: _posts
       type: posts
-    values:
-      layout: single
-      author_profile: true
-      classes: wide
-
 
 category_archive:
   type: liquid

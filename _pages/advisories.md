@@ -1,5 +1,4 @@
 ---
-title: Advisories
 permalink: /advisories/
 ---
 

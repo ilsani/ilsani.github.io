@@ -1,6 +1,5 @@
 ---
 title: About me
-permalink: /about/
 redirect_from:
   - /php-null-ptr-deref-in-virtual_file_ex/
   - /php-null-ptr-deref-in-zend_virtual_cwd/

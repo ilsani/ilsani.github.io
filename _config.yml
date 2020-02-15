@@ -23,7 +23,7 @@ url: "http://martinosani.it" # the base hostname & protocol for your site, e.g. 
 
 header_pages:
   - about.md
-  - portfolio.md
+  - advisories.html
 
 # Build settings
 markdown: kramdown

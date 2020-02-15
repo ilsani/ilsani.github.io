@@ -1,3 +1,3 @@
 ---
-permlink: /
+permalink: /
 ---

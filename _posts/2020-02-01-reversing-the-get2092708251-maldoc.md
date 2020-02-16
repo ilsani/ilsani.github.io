@@ -185,12 +185,14 @@ File size: 1012 kb
 A deep analysis of this file is out of scope of this post but after a preliminary assessment of the `444444.png` file it was noted that it performs multiple actions (e.g. runtime self-extraction and persistence on the victim host).
 
 The `444444.png` file decode and create its code at runtime, such as shellcodes, making the static analysis pratically impossible or very time consuming.
+
 ...
 
 
 
 
 ## Detection
+
 ...
 
 

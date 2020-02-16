@@ -172,10 +172,28 @@ During the analysis it was noted that the malicious Word document creates the `2
 
 ### Stage 2
 
+During the analysis it was discovered that the malicious Word document acting as a *droppper*. Therefore, during the execution it downloads a stage 2 file (`444444.png`) from a remote host and running it on the victim host.
+
+It was noted that the `444444.png` file is PE32 executable file. Below are shown some details about this file:
+```
+Filename: 444444.png
+MD5: b92ae63f5ec03192babe48ace0c3f7b9
+File type: PE32 executable (GUI) Intel 80386, for MS Windows
+File size: 1012 kb
+```
+
+A deep analysis of this file is out of scope of this post but after a preliminary assessment of the `444444.png` file it was noted that it performs multiple actions (e.g. runtime self-extraction and persistence on the victim host).
+
+The `444444.png` file decode and create its code at runtime, such as shellcodes, making the static analysis pratically impossible or very time consuming.
+...
+
 
 
 
 ## Detection
+...
+
+
 
 
 

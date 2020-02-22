@@ -182,26 +182,26 @@ File type: PE32 executable (GUI) Intel 80386, for MS Windows
 File size: 1012 kb
 ```
 
-A deep analysis of this file is out of scope of this post but after a preliminary assessment of the `444444.png` file it was noted that it performs multiple actions (e.g. runtime self-extraction and persistence on the victim host).
+A deep analysis of this file is out of scope but a preliminary assessment of the `444444.png` file revealed that it performs multiple actions (e.g. runtime self-extraction and persistence on the victim host).
 
-The `444444.png` file decode and create its code at runtime, such as a shellcode, making the static analysis pratically impossible. The malware code starts on the `WinMain` routine, jumping to the `loc_4539D0` memory location.
+The `444444.png` file decodes and creates its code at runtime, such as a shellcode, making the static analysis pratically impossible. The malware code starts on the `WinMain` routine, jumping to the `loc_4539D0` memory location.
 
 ![loc_4539D0]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-loc_4539D0.png)
 
-Hence, multiple in-memory decoding procedure are used to decode the malware code at runtime. For example, as shown on the below figure a `jmp edi` is performed to call some runtime decoded code at the `0x4E6CE8` memory address.
+Hence, multiple in-memory decoding procedures are called to decode the malware code at runtime. For example, as shown on the below figure a `jmp edi` is performed to call some runtime decoded code at the `4E6CE8` memory address.
 
 ![sub452FF0jmpedi]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-sub452FF0jmpedi.png)
 
-It was noted that, after the decoding procedure, the malware copied his file (`444444.png`), downloaded on the file-system during the stage 1, to the `C:\Documents and Settings\ut1\Dati applicazioni\Microsoft\Hbioysuz\` file-system directory creating the `izzvar.exe` file.
+It was noted that, after the decoding steps, the malware copied his file (`444444.png`), downloaded on the file-system during the stage 1, to the `C:\Documents and Settings\ut1\Dati applicazioni\Microsoft\Hbioysuz\` file-system directory creating the `izzvar.exe` file.
 Below is shown the call to the `CopyFileW` Windows API using his memory address (`7C82F863`) defined on the in-memory array `dword_40AE9C`:
 
 ![copy-file-call]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-copyfilecall.png)
 
-Below is shown the `CopyFileW` Windows API address (`7C82F863`) on in-memory array `dword_40AE9C` at the offset `1F0h`:
+Below is shown the `CopyFileW` Windows API address (`7C82F863`) on the in-memory array `dword_40AE9C` at the offset `1F0h`:
 
 ![dword_40AE9C-copyfilew]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-dword_40AE9C-copyfilew.png)
 
-As shown below the `kernel32_CopyFileW` is called using the `C:\Documents and Settings\ut1\Dati applicazioni\Microsoft\Hbioysuz\` as the destination path and the running file, downloaded during the stage 1, `C:\tmp\444444.png` as source path. These parameters were pushed on the stack respectively on `ebp+0c` and `ebp+8`:
+As shown below the `kernel32_CopyFileW` is called using the `C:\Documents and Settings\ut1\Dati applicazioni\Microsoft\Hbioysuz\` as the destination path and the running file path, downloaded during the stage 1, `C:\tmp\444444.png` as source path. These parameters were pushed on the stack respectively on `ebp+0c` and `ebp+8`:
 
 ![kernel32-copyfilew]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-kernel32-copyfilew.png)
 
@@ -209,7 +209,7 @@ Below is shown the `izzvar.exe` file created on the file-system under the `C:\Do
 
 ![izzvar]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-izzvar.png)
 
-Moreover, during this phase, the registry key `nfukzo` has been created, under the `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\` directory, with the `C:\Documents and Settings\ut1\Dati applicazioni\Microsoft\Hbioysuz\izzvar.exe` value. Therefore, the `izzvar.exe` file created above is started when the system is rebooted.
+Moreover, the registry key `nfukzo` has been created under the `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\` directory with the `C:\Documents and Settings\ut1\Dati applicazioni\Microsoft\Hbioysuz\izzvar.exe` value. Therefore, the `izzvar.exe` file created above is started when the system is rebooted.
 
 ![nfukzo]({{ site.url }}/assets/images/posts/reversing-the-get2092708251-maldoc/reversing-the-get2092708251-maldoc-nfukzo.png)
 

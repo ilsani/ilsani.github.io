@@ -60,7 +60,9 @@ During the analysis a breakpoint on the entry point has been created using the f
 > bp 00400000+6001
 ```
 
-It was noted that when the breakpoint on the entry point triggered, the first instruction is a `pushad`. Hence, the contents of the general-purpose registers were pushed onto the stack.
+It was noted that when the breakpoint on the entry point triggered, the first instruction is a `pushad`. Therefore, the contents of the general-purpose registers were pushed onto the stack. Below is shown the `pushad` instruction executed on the entry point:
+
+![windbg-entry-point-breakpoint]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-entry-point-breakpoint.png)
 
 It is reasonabily to think that after the unpacking procedure the contents of these registers will be restored and the memory address on the stack, pointed to the `esp` register, will be accessed.
 

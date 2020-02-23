@@ -108,20 +108,20 @@ It was noted that the `Carrow` macro contains two main functions, declared also 
 The `autoopen` macro creates and executes a BAT file on the victim host. <br />
 The `copyToA` macro tries to copy and spread the malicious document across others documents on the victim host.
 
-Specifically, the `autoopen` macro create the `C:\APPLE\2614945622319.BAT` file:
+Specifically, the `autoopen` macro creates the `C:\APPLE\2614945622319.BAT` file:
 ```
 lHandle = CreateFileA("C:\APPLE\2614945622319.BAT", GENERIC_WRITE Or GENERIC_READ, _
                          &H2, 0, CREATE_ALWAYS, FILE_SHARE_WRITE, 0)
 ```
 
-write something on the `2614945622319.BAT` file created above:
+writes something on the `2614945622319.BAT` file created above:
 ```
 Open "C:\APPLE\2614945622319.BAT" For Output As #1
     Print #1, BlueControl.FAQ.Caption
 Close #1
 ```
 
-and execute the `2614945622319.BAT` file:
+and executes the `2614945622319.BAT` file:
 ```
 Testing
 End Function

@@ -58,7 +58,6 @@ ImageBaseAddress + AddressOfEntryPoint = Entry Point
 During the analysis a breakpoint on the entry point has been created using the following command in WinDbg:
 ```
 > bp 00400000+6001
-
 ```
 
 It was noted that when the breakpoint on the entry point triggered, the first instruction is a `pushad`. Hence, the contents of the general-purpose registers were pushed onto the stack.
@@ -83,16 +82,14 @@ The `Import Reconstructor` tool contains a built-in process dumping tool. Theref
 
 ![dump]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-dump.png)
 
-Moreover, the `Import Reconstructor` tool has been also used to fix the IAT table. Therefore, using the original entyr point found on WinDbg (`004010000`), it was possible to use the "IAT Autosearch" Import Reconstructor button.
-This locates the import address table from the original executable.
+Moreover, the `Import Reconstructor` tool has been also used to fix the IAT table. Therefore, using the original entyr point found on WinDbg (`004010000`), it was possible to use the `IAT Autosearch` Import Reconstructor button.
+This locates the import address table from the original executable and allowed to create an executable unapacked file.
 
 ![iat-fix]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-iat-fix.png)
 
-As shown below loading the unpacked file on IDA tool it was possible to see the used Windows APIs:
+As shown below it was possible to load the unpacked file on the IDA tool and retreiving all the used Win32 API:
 
-[ . . . ]
-
-
+![ida]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-ida.png)
 
 
 

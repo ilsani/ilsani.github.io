@@ -73,17 +73,20 @@ When the above breakpoint has been triggered, the unpacking routine decoded the 
 
 Below is shown the code showing the `ret` instruction before the jump to the original entry point.
 
-![windbg-stack-breakpoint]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-ret.png)
+![windbg-ret]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-ret.png)
 
 It was noted that, after the above `ret`, the original entry point is on the `00401000` memory address. Below are shown the `Base Address` and the `End Address` on the WinDbg tool, respectively pointing to the `004010000` and `00407000` addresses.
 
-![windbg-stack-breakpoint]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-original-entry-point.png)
+![windbg-original-entry-point]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-original-entry-point.png)
 
-The `` tool has been used in order to dump the unpacked file on the file-system.
+The `Import Reconstructor` tool contains a built-in process dumping tool. Therefore, it was used to dump the unpacked file on the file-system. As shown on the figure below, clicking on the middle window and selecting the `Advanced Command -> Select code section(s)` it was possible to `Full dump` the running unpacked code:
 
-Moreover, the `` tool has been also used to fix the IAT table. Therefore, ...
+![dump]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-dump.png)
 
-[ . . . ]
+Moreover, the `Import Reconstructor` tool has been also used to fix the IAT table. Therefore, using the original entyr point found on WinDbg (`004010000`), it was possible to use the "IAT Autosearch" Import Reconstructor button.
+This locates the import address table from the original executable.
+
+![iat-fix]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-iat-fix.png)
 
 As shown below loading the unpacked file on IDA tool it was possible to see the used Windows APIs:
 

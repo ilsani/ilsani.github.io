@@ -1,14 +1,15 @@
 ---
-title: ASPack manual packing
+title: ASPack manual unpacking
 date:  2020-02-01 12:00:00
 excerpt: "This post attempts to describe the approach to manual unpack a sample program packed using the ASPack packer."
 ---
 
 This post attempts to describe the approach to manual unpack a program packed using the ASPack packer.
 
-ASPack is an EXE packer created to compress Win32 executable files and to protect them against non-professional reverse engineering. Online can be found multiple resources descripting how to manually unpack a *aspacked* file. This post describe how a packed program has been unpacked using the WinDbg tool.
+ASPack is an EXE packer created to compress Win32 executable files and to protect them against non-professional reverse engineering. Online can be found multiple resources descripting how to manually unpack an *aspacked* file. This post describe how a packed program has been unpacked using the WinDbg tool.
 
-A free trial version of the ASPack packer can be downloaded at the official web site. For example, the 32 bit version can be found on the following URL: http://www.aspack.com/asprotect32.html. However, a packed file has been found on Internet. Following an overview of the target file:
+A free trial version of the ASPack packer can be downloaded at the official web site. For example, the 32 bit version can be found on the following URL: http://www.aspack.com/asprotect32.html.
+However, a packed file has been found on Internet. Following an overview of the target file:
 ```
 Filename: keygenme.exe
 MD5: e2a1ba2227ba1dc32ac87449c0418df5
@@ -33,10 +34,12 @@ In a nutshell, the following approach has been followed in order to unpack the p
 4. Trace the code and follow the `retn` instruction
 5. Dump and fix the unpacked file
 
+
 First of all, it was calculated the entry point of the packed file.
 This entry point has nothing to do with the original entry point of the unpacked file.
 
 The entry point it was calculated using the `WinDbg` tool.
+
 The `!peb` command displays the debugged Process Environment Block. Below is shown the `!peb` output. Specifically, the `ImageBaseAddress` contains the image base memory address.
 
 ![windbg-imagebaseaddress]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-imagebaseaddress.png)
@@ -59,13 +62,16 @@ During the analysis a breakpoint on the entry point has been created using the f
 ```
 
 It was noted that when the breakpoint on the entry point triggered, the first instruction is a `pushad`. Hence, the contents of the general-purpose registers were pushed onto the stack.
-It is reasonabily to think that after the unpacking procedures the contents of these registers will be restored and the memory address on the stack, pointed to the `esp` register, will be accessed.
+
+It is reasonabily to think that after the unpacking procedure the contents of these registers will be restored and the memory address on the stack, pointed to the `esp` register, will be accessed.
 
 During the analysis it was created a breakpoint on the memory address pointed by the `esp` register. Below is shown the WinDbg command `ba r 4 12ffa4` used to create the breakpoint and the `esp` register which points to the `12ffa4` address.
 
 ![windbg-stack-breakpoint]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-stack-breakpoint.png)
 
-When the above breakpoint has been triggered, the unpacking routine decoded the file. Therefore, following the first `ret` instruction it was found the original entry point. Below is shown the dissassmbly code showing the `ret` instruction before the jump to the original entry point.
+When the above breakpoint has been triggered, the unpacking routine decoded the file. Therefore, following the first `ret` instruction it was possible to found the original entry point.
+
+Below is shown the code showing the `ret` instruction before the jump to the original entry point.
 
 ![windbg-stack-breakpoint]({{ site.url }}/assets/images/posts/aspack-manual-unpacking/aspack-manual-unpacking-windbg-ret.png)
 

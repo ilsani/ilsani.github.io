@@ -38,7 +38,7 @@ In a nutshell, the following approach has been followed in order to unpack the p
 First of all, it was calculated the entry point of the packed file.
 This entry point has nothing to do with the original entry point of the unpacked file.
 
-The entry point it was calculated using the `WinDbg` tool.
+The entry point was calculated using the `WinDbg` tool.
 
 The `!peb` command displays the debugged Process Environment Block. Below is shown the `!peb` output. Specifically, the `ImageBaseAddress` contains the image base memory address.
 

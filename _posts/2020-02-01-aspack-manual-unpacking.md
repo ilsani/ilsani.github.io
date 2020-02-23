@@ -12,11 +12,11 @@ A free trial version of the ASPack packer can be downloaded at the official web 
 However, a packed file has been found on Internet. Following an overview of the target file:
 
 
-**Filename:** keygenme.exe
-**MD5:** e2a1ba2227ba1dc32ac87449c0418df5
-**File type:** PE32 executable (GUI) Intel 80386, for MS Windows
-**File size:** 12 kb
-**URL:** {{ site.url }}/assets/posts/aspack-manual-unpacking/keygenme.exe.zip
+**Filename:** keygenme.exe<br/>
+**MD5:** e2a1ba2227ba1dc32ac87449c0418df5<br/>
+**File type:** PE32 executable (GUI) Intel 80386, for MS Windows<br/>
+**File size:** 12 kb<br/>
+**File:** [Download]{{ site.url }}/assets/posts/aspack-manual-unpacking/keygenme.exe.zip
 
 
 An ASPacked file can be easly detected because has the `.aspack` section. Below are shown the PE sections of the target file and his `.aspack` section:

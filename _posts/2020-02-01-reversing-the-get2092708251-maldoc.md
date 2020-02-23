@@ -14,7 +14,7 @@ File type: Microsoft Word 2007+
 
 ## Technical analysis
 
-Downloaded the malware sample from *hybrid-analysis.com*, we found a gzip archive containing the malicious Microsoft Word document `8a6b7f579788205fa5580aeefc415883998db8cf9d00aae90ce05594a19cc91d.bin`.
+Downloaded the malware sample from *hybrid-analysis.com*, it was found a gzip archive containing the malicious Microsoft Word document `8a6b7f579788205fa5580aeefc415883998db8cf9d00aae90ce05594a19cc91d.bin`.
 A common approach to embed a malware inside a Word document is through a VBA macro. Hence, the document it was unzippend as shown below.
 
 ```
